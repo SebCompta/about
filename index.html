@@ -4,8 +4,271 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sébastien Compta — Chef de mission & Développeur</title>
+  <style>
+    :root {
+      --primary: #1a2e4a;
+      --accent: #2d6a9f;
+      --light: #f4f7fb;
+      --text: #2c3e50;
+      --muted: #6b7c93;
+      --border: #dde3ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 80px 24px 64px;
+      text-align: center;
+    }
+
+    .hero .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto 24px;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+
+    .hero h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+
+    .hero .tagline {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .hero .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ── SECTIONS ── */
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    h2 { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+    p { color: var(--text); margin-bottom: 12px; }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .card .icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .card h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .card p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+    /* ── ACHIEVEMENT ── */
+    .achievement {
+      background: var(--light);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+
+    .achievement h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .achievement p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+    /* ── VALUES ── */
+    .values-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+
+    .values-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; }
+
+    .values-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── CTA ── */
+    .cta { background: var(--primary); color: #fff; text-align: center; padding: 56px 24px; }
+    .cta h2 { color: #fff; font-size: 1.6rem; margin-bottom: 12px; }
+    .cta p { color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 28px; }
+
+    .cta a {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .cta a:hover { opacity: 0.9; }
+
+    footer { text-align: center; padding: 24px; font-size: 0.82rem; color: var(--muted); }
+
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 1.6rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <p>À venir.</p>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="avatar">SC</div>
+    <h1>Sébastien Compta</h1>
+    <p class="tagline">
+      Chef de mission en expertise comptable et développeur web —
+      au croisement des chiffres et du numérique.
+    </p>
+    <div class="badges">
+      <span class="badge">Expertise comptable</span>
+      <span class="badge">Digitalisation</span>
+      <span class="badge">Développement web</span>
+    </div>
+  </header>
+
+  <!-- À PROPOS -->
+  <section>
+    <div class="container">
+      <p class="section-label">À propos</p>
+      <h2>Un profil qui réunit deux mondes</h2>
+      <p>
+        Je suis chef de mission en cabinet d'expertise comptable, où j'accompagne mes clients
+        dans la gestion et le pilotage financier de leur activité. Mais je suis aussi développeur :
+        j'ai conçu et publié <strong>aarec.fr</strong>, un site pensé pour rendre les services
+        comptables plus accessibles et lisibles.
+      </p>
+      <p>
+        Cette double casquette me permet d'apporter à mes clients non seulement une expertise
+        métier solide, mais aussi une vision moderne et outillée de leur activité.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section>
+    <div class="container">
+      <p class="section-label">Compétences</p>
+      <h2>Ce que j'apporte</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Expertise comptable</h3>
+          <p>Tenue, révision, conseil fiscal et financier auprès des dirigeants.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Digitalisation</h3>
+          <p>Automatisation des tâches répétitives et mise en place d'outils sur mesure.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌐</div>
+          <h3>Développement web</h3>
+          <p>Création de sites et d'applications adaptés aux besoins des cabinets et des PME.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Relation client</h3>
+          <p>Écoute, disponibilité et suivi personnalisé pour chaque dossier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS -->
+  <section>
+    <div class="container">
+      <p class="section-label">Réalisations</p>
+      <h2>Ce que j'ai construit</h2>
+      <div class="achievement">
+        <h3>Outils internes de digitalisation</h3>
+        <p>
+          Conception et déploiement d'outils internes pour automatiser des tâches répétitives
+          en cabinet : tableaux de bord, automatisation de traitements, centralisation
+          des informations clients — pour gagner du temps et réduire les erreurs.
+        </p>
+      </div>
+      <div class="achievement">
+        <h3>Publication du site aarec.fr</h3>
+        <p>
+          Développement complet d'un site professionnel pour présenter les services
+          du cabinet, améliorer sa visibilité et faciliter la prise de contact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALEURS -->
+  <section>
+    <div class="container">
+      <p class="section-label">Valeurs</p>
+      <h2>Comment je travaille</h2>
+      <ul class="values-list">
+        <li>La relation client avant tout : je prends le temps de comprendre avant de conseiller.</li>
+        <li>La simplicité : rendre le complexe accessible, que ce soit en comptabilité ou en tech.</li>
+        <li>L'efficacité durable : des solutions qui font gagner du temps, pas juste à court terme.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Travaillons ensemble</h2>
+    <p>
+      Vous cherchez un partenaire qui comprend à la fois les enjeux financiers
+      de votre activité et les possibilités du numérique ?
+    </p>
+    <a href="https://aarec.fr">Découvrir aarec.fr</a>
+  </div>
+
+  <footer>
+    &copy; 2026 Sébastien Compta
+  </footer>
+
 </body>
 </html>
